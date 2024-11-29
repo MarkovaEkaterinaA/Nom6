@@ -1,0 +1,41 @@
+import lombok.AllArgsConstructor;
+import java.util.HashMap;
+import java.util.Map;
+
+@AllArgsConstructor
+public class MontyHall {
+
+    private final int numberOfGames;
+    private Map<Integer, Integer> results = new HashMap<>();
+
+    public void run() {
+        for (int i = 0; i < numberOfGames; i++) {
+            int initialChoice = chooseInitialDoor();
+            int montyChoice = openMontyDoor(initialChoice);
+            boolean userChanged = userChangedDoor(montyChoice);
+
+            if (userChanged) {
+                results.put(i, 1); // победа
+            } else {
+                results.put(i, 0); // поражение
+            }
+        }
+    }
+
+    // Методы для выбора дверей и подсчёта результатов
+    private int chooseInitialDoor() {
+        // Реализация метода выбора начальной двери
+    }
+
+    private int openMontyDoor(int initialChoice) {
+        // Реализация метода открытия двери Монти
+    }
+
+    private boolean userChangedDoor(int montyChoice) {
+        // Реализация проверки, изменил ли пользователь дверь
+    }
+
+    public Map<Integer, Integer> getResults() {
+        return results;
+    }
+}
