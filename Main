@@ -1,0 +1,12 @@
+public class Main {
+
+    public static void main(String[] args) {
+        MontyHall montyHall = new MontyHall(1000);
+        montyHall.run();
+
+        System.out.println("Статистика по победам и поражениям:");
+        for (Map.Entry<Integer, Integer> entry : montyHall.getResults().entrySet()) {
+            System.out.printf("%d: %d%n", entry.getKey(), entry.getValue());
+        }
+    }
+}
